@@ -1,180 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NutriShare - Food Redistribution & Nutrition Tracking</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Nunito', sans-serif;
-    }
-    body {
-      background: linear-gradient(to right, #F9FAFB, #E4F0E2);
-      color: #333;
-    }
-    header {
-      background: #2D6A4F;
-      color: white;
-      padding: 1rem 2rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2rem;
-    }
-    nav {
-      background: #40916C;
-      display: flex;
-      justify-content: center;
-      padding: 0.5rem;
-    }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .container {
-      padding: 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    .card {
-      background: white;
-      border-radius: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 1.5rem;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .card h3 {
-      margin-bottom: 1rem;
-      color: #1B4332;
-    }
-    .card p {
-      color: #4f4f4f;
-    }
-    .hero {
-      text-align: center;
-      padding: 3rem 1rem;
-      background: #D8F3DC;
-    }
-    .hero h2 {
-      font-size: 2rem;
-      color: #081C15;
-    }
-    .hero p {
-      max-width: 600px;
-      margin: 1rem auto;
-      font-size: 1.1rem;
-    }
-    footer {
-      text-align: center;
-      background: #2D6A4F;
-      color: white;
-      padding: 1rem;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriShare - Home</title>
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
   <header>
     <h1>NutriShare</h1>
-    <p>Smart Food Redistribution & Nutrition Awareness</p>
+    <nav>
+  <a href="index.html">Home</a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="login.html">Login</a>
+  <a href="storage.html">Storage</a>
+  <a href="donate.html">Donate</a>
+  <a href="scanner.html">Scan Food</a>
+</nav>
+
   </header>
 
-  <nav>
-    <a href="#" onclick="goToPage('home')">Home</a>
-    <a href="#" onclick="goToPage('donate')">Donate Food</a>
-    <a href="#" onclick="goToPage('scan')">Scan Nutrition</a>
-    <a href="#" onclick="goToPage('map')">Live Map</a>
-    <a href="#" onclick="goToPage('impact')">Impact Tracker</a>
-  </nav>
-
-  <section class="hero">
-    <h2 id="pageTitle">Join the Movement Against Hunger</h2>
-    <p id="pageDescription">Connect excess food from donors to those in need using AI and Blockchain. Track nutrition, earn credits, and reduce waste — all in one place.</p>
-  </section>
-
-  <section class="container" id="cardContainer">
-    <div class="card" onclick="goToPage('donate')">
-      <h3>Donate Food</h3>
-      <p>Log excess food and we'll connect it to nearby NGOs based on freshness and nutrition.</p>
-    </div>
-
-    <div class="card" onclick="goToPage('scan')">
-      <h3>Nutrition Scanner</h3>
-      <p>Estimate calories, freshness, and food value using AI-powered camera tools.</p>
-    </div>
-
-    <div class="card" onclick="goToPage('map')">
-      <h3>Live Map</h3>
-      <p>Check food availability, donation hubs, and demand areas near you.</p>
-    </div>
-
-    <div class="card" onclick="goToPage('blockchain')">
-      <h3>Blockchain Record</h3>
-      <p>See a verified donation record with full transparency and traceability.</p>
-    </div>
-
-    <div class="card" onclick="goToPage('credits')">
-      <h3>Nutrition Credits</h3>
-      <p>Earn tokens for donations. Redeem them for recognition or social benefits.</p>
-    </div>
-
-    <div class="card" onclick="goToPage('impact')">
-      <h3>Sustainability Impact</h3>
-      <p>Track your impact: meals shared, emissions saved, and more.</p>
-    </div>
-  </section>
+  <main>
+    <section class="hero">
+      <h2>Welcome to NutriShare</h2>
+      <p>Blockchain-based food sharing & nutrition tracking system.</p>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 NutriShare. Built with ❤️ for a better world.</p>
+    <p>&copy; 2025 NutriShare. All rights reserved.</p>
   </footer>
-
-  <script>
-    const pages = {
-      home: {
-        title: 'Join the Movement Against Hunger',
-        desc: 'Connect excess food from donors to those in need using AI and Blockchain. Track nutrition, earn credits, and reduce waste — all in one place.'
-      },
-      donate: {
-        title: 'Donate Your Excess Food',
-        desc: 'Enter food details, location, and let our AI connect it to the nearest verified NGO or shelter.'
-      },
-      scan: {
-        title: 'Scan Your Food',
-        desc: 'Take a photo of your food to get instant calorie and nutrition breakdown with our smart scanner.'
-      },
-      map: {
-        title: 'Explore the Community Map',
-        desc: 'Find donation centers, high-demand areas, and real-time food availability near you.'
-      },
-      blockchain: {
-        title: 'Verified Blockchain Records',
-        desc: 'Every donation is logged securely. Build trust with full transparency for all stakeholders.'
-      },
-      credits: {
-        title: 'Earn Nutrition Credits',
-        desc: 'Support others and get rewarded. Use credits for recognition, tax perks, and more.'
-      },
-      impact: {
-        title: 'Your Impact Dashboard',
-        desc: 'Track meals donated, emissions saved, and people fed — in real-time.'
-      }
-    };
-
-    function goToPage(page) {
-      const data = pages[page];
-      document.getElementById('pageTitle').textContent = data.title;
-      document.getElementById('pageDescription').textContent = data.desc;
-    }
-  </script>
 </body>
 </html>
