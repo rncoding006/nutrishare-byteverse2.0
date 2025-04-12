@@ -49,6 +49,7 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       padding: 1.5rem;
       transition: 0.3s;
+      cursor: pointer;
     }
     .card:hover {
       transform: translateY(-5px);
@@ -89,52 +90,91 @@
   </header>
 
   <nav>
-    <a href="#">Home</a>
-    <a href="#donate">Donate Food</a>
-    <a href="#scan">Scan Nutrition</a>
-    <a href="#map">Live Map</a>
-    <a href="#impact">Impact Tracker</a>
+    <a href="#" onclick="goToPage('home')">Home</a>
+    <a href="#" onclick="goToPage('donate')">Donate Food</a>
+    <a href="#" onclick="goToPage('scan')">Scan Nutrition</a>
+    <a href="#" onclick="goToPage('map')">Live Map</a>
+    <a href="#" onclick="goToPage('impact')">Impact Tracker</a>
   </nav>
 
   <section class="hero">
-    <h2>Join the Movement Against Hunger</h2>
-    <p>Connect excess food from donors to those in need using AI and Blockchain. Track nutrition, earn credits, and reduce waste — all in one place.</p>
+    <h2 id="pageTitle">Join the Movement Against Hunger</h2>
+    <p id="pageDescription">Connect excess food from donors to those in need using AI and Blockchain. Track nutrition, earn credits, and reduce waste — all in one place.</p>
   </section>
 
-  <section class="container">
-    <div class="card">
+  <section class="container" id="cardContainer">
+    <div class="card" onclick="goToPage('donate')">
       <h3>Donate Food</h3>
-      <p>Restaurants, caterers, and individuals can log excess food here. The system matches it to nearby NGOs based on freshness and nutrition.</p>
+      <p>Log excess food and we'll connect it to nearby NGOs based on freshness and nutrition.</p>
     </div>
 
-    <div class="card">
+    <div class="card" onclick="goToPage('scan')">
       <h3>Nutrition Scanner</h3>
-      <p>Use our AI-powered scanner to estimate calories, freshness, and value of food with your phone’s camera.</p>
+      <p>Estimate calories, freshness, and food value using AI-powered camera tools.</p>
     </div>
 
-    <div class="card">
+    <div class="card" onclick="goToPage('map')">
       <h3>Live Map</h3>
-      <p>View current food availability, active donation hubs, and high-demand areas across your locality.</p>
+      <p>Check food availability, donation hubs, and demand areas near you.</p>
     </div>
 
-    <div class="card">
+    <div class="card" onclick="goToPage('blockchain')">
       <h3>Blockchain Record</h3>
-      <p>Every donation is immutably recorded on the blockchain to ensure full transparency and traceability.</p>
+      <p>See a verified donation record with full transparency and traceability.</p>
     </div>
 
-    <div class="card">
+    <div class="card" onclick="goToPage('credits')">
       <h3>Nutrition Credits</h3>
-      <p>Donors earn credits that can be redeemed for recognition or tax benefits. Give food, earn good!</p>
+      <p>Earn tokens for donations. Redeem them for recognition or social benefits.</p>
     </div>
 
-    <div class="card">
+    <div class="card" onclick="goToPage('impact')">
       <h3>Sustainability Impact</h3>
-      <p>Track how many meals you've helped deliver, CO2 saved, and more via our live dashboard.</p>
+      <p>Track your impact: meals shared, emissions saved, and more.</p>
     </div>
   </section>
 
   <footer>
     <p>&copy; 2025 NutriShare. Built with ❤️ for a better world.</p>
   </footer>
+
+  <script>
+    const pages = {
+      home: {
+        title: 'Join the Movement Against Hunger',
+        desc: 'Connect excess food from donors to those in need using AI and Blockchain. Track nutrition, earn credits, and reduce waste — all in one place.'
+      },
+      donate: {
+        title: 'Donate Your Excess Food',
+        desc: 'Enter food details, location, and let our AI connect it to the nearest verified NGO or shelter.'
+      },
+      scan: {
+        title: 'Scan Your Food',
+        desc: 'Take a photo of your food to get instant calorie and nutrition breakdown with our smart scanner.'
+      },
+      map: {
+        title: 'Explore the Community Map',
+        desc: 'Find donation centers, high-demand areas, and real-time food availability near you.'
+      },
+      blockchain: {
+        title: 'Verified Blockchain Records',
+        desc: 'Every donation is logged securely. Build trust with full transparency for all stakeholders.'
+      },
+      credits: {
+        title: 'Earn Nutrition Credits',
+        desc: 'Support others and get rewarded. Use credits for recognition, tax perks, and more.'
+      },
+      impact: {
+        title: 'Your Impact Dashboard',
+        desc: 'Track meals donated, emissions saved, and people fed — in real-time.'
+      }
+    };
+
+    function goToPage(page) {
+      const data = pages[page];
+      document.getElementById('pageTitle').textContent = data.title;
+      document.getElementById('pageDescription').textContent = data.desc;
+    }
+  </script>
 </body>
 </html>
